@@ -24,7 +24,7 @@ let md = `
 async function main() {
     try {
         
-        let resp = await gotenberg.html2pdf("http://135.181.158.56:8005", html, "index.pdf", {});
+        let resp = await gotenberg.html2pdf("http://{{gotenberg_IP}}:{{PORT}}", html, "index.pdf", {});  // change the {{}} vars to suit your gotenberg location 
         
         const fs = require('fs')
         fs.writeFile("html_file.pdf", resp.data, (err) => {
